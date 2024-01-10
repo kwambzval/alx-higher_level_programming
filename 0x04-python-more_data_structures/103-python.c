@@ -1,39 +1,35 @@
 #include <Python.h>
-#include <stdio.h>
 
 void print_python_list(PyObject *p)
 {
 	long int size = PyList_Size(p);
+	int i;
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %ld\n", size);
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
-	for (long int i = 0; i < size; i++)
-	{
-		PyObject *item = PyList_GetItem(p, i);
-
-		printf("Element %ld: %s\n", i, item->ob_type->tp_name);
-	}
+	for (i = 0; i < size; i++)
+		printf("Element %d: %s\n", i, Py_TYPE(PyList_GetItem(p, i))->tp_name);
 }
 
 void print_python_bytes(PyObject *p)
 {
-	if (!PyBytes_Check(p))
-	{
-		printf("[ERROR] Invalid Bytes Object\n");
-		return;
-	}
-	long int size = PyBytes_Size(p);
-	char *trying_str = PyBytes_AsString(p);
+	char *str;
+	Py_ssize_t length;
+	int i;
 
 	printf("[.] bytes object info\n");
-	printf("  size: %ld\n", size);
-	printf("  trying string: %s\n", trying_str);
-	printf("  first 10 bytes: ");
-	for (long int i = 0; i < size && i < 10; i++)
+	if (!PyBytes_Check(p))
 	{
-		printf("%02hhx ", (unsigned char)trying_str[i]);
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
 	}
-	printf("\n");
+	str = PyBytes_AS_STRING(p);
+	length = PyBytes_GET_SIZE(p);
+	printf("  size: %ld\n", length);
+	printf("  trying string: %s\n", str);
+	printf("  first %ld bytes: ", length < 10 ? length + 1 : 10);
+	for (i = 0; i < length + 1 && i < 10; i++)
+		printf("%02hhx%s", str[i], i + 1 < length + 1 && i + 1 < 10 ? " " : "\n");
 }
 
