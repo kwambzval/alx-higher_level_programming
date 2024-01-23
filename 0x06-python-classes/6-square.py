@@ -3,7 +3,7 @@
 This module defines a class Square that represents a square.
 The Square class includes a private instance attribute size, a
 getter and setter for size, and methods for calculating the area
-and printing the square with # character.
+printing the square and Coordinates of a square.
 """
 
 
