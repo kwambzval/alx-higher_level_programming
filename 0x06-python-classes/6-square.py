@@ -18,7 +18,7 @@ class Square:
         Initialize Square instance with size and position.
 
         Args:
-        size (int): The size of the sides of the Square.
+                       size (int): The size of the sides of the Square.
             Must be an integer.
             position (tuple): The position of the Square.
             Must be a tuple of 2 positive integers.
@@ -31,8 +31,7 @@ class Square:
         """
         Retrieve the size of the Square instance.
 
-        Returns:
-        int: The size of the sides of the Square.
+        Returns:int: The size of the sides of the Square.
         """
         return self.__size
 
@@ -68,7 +67,6 @@ class Square:
     def position(self, value):
         """
         Set the position of the Square instance.
-
         Args:
             value (tuple): The position of the Square.
             Must be a tuple of 2 positive integers.
