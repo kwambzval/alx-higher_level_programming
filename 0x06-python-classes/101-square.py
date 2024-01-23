@@ -12,9 +12,10 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """
         Initialize Square instance with size and position.
+
         Args:
-            size (int): The size of the sides of the Square. Must be an
-            integer
+            size (int): The size of the sides of the Square.
+            Must be an integer.
             position (tuple): The position of the Square.
             Must be a tuple of 2 positive integers.
         """
@@ -25,6 +26,7 @@ class Square:
     def size(self):
         """
         Retrieve the size of the Square instance.
+
         Returns:
             int: The size of the sides of the Square.
         """
@@ -34,9 +36,11 @@ class Square:
     def size(self, value):
         """
         Set the size of the Square instance.
+
         Args:
             value (int): The size of the sides of the Square.
             Must be an integer.
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
@@ -51,6 +55,7 @@ class Square:
     def position(self):
         """
         Retrieve the position of the Square instance.
+
         Returns:
             tuple: The position of the Square.
         """
@@ -60,14 +65,16 @@ class Square:
     def position(self, value):
         """
         Set the position of the Square instance.
+
         Args:
             value (tuple): The position of the Square.
             Must be a tuple of 2 positive integers.
+
         Raises:
             TypeError: If value is not a tuple of 2 positive integers.
         """
-        if type(value) is not tuple or len(value) != 2 or type(value[0])
-        is not int or value[0] < 0 or
+        if type(value) is not tuple or len(value) != 2 or
+        type(value[0]) is not int or value[0] < 0 or
         type(value[1]) is not int or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
@@ -75,6 +82,7 @@ class Square:
     def area(self):
         """
         Calculate the area of the Square instance.
+
         Returns:
             int: The area of the Square.
         """
@@ -83,6 +91,7 @@ class Square:
     def my_print(self):
         """
         Print the Square instance with the character #.
+
         Prints an empty line if size is equal to 0.
         Uses position by using space.
         """
@@ -97,6 +106,7 @@ class Square:
     def __str__(self):
         """
         Return a string that represents the Square instance.
+
         Returns:
             str: A string that represents the Square instance.
         """
