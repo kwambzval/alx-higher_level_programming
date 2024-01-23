@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-This module defines a class Square that represents a square.
-The Square class includes a private instance attribute size, a
-getter and setter for size, and methods for calculating the area
-printing the square and Coordinates of a square.
+This module defines a Square class to represent a square.
+
+The Square class defines a square by its size and position.
+It includes methods to calculate the area  Coordinates of a square
+and print the square.
 """
 
 
@@ -17,7 +18,7 @@ class Square:
         Initialize Square instance with size and position.
 
         Args:
-            size (int): The size of the sides of the Square.
+        size (int): The size of the sides of the Square.
             Must be an integer.
             position (tuple): The position of the Square.
             Must be a tuple of 2 positive integers.
@@ -31,7 +32,7 @@ class Square:
         Retrieve the size of the Square instance.
 
         Returns:
-            int: The size of the sides of the Square.
+        int: The size of the sides of the Square.
         """
         return self.__size
 
@@ -39,7 +40,6 @@ class Square:
     def size(self, value):
         """
         Set the size of the Square instance.
-
         Args:
             value (int): The size of the sides of the Square.
             Must be an integer.
