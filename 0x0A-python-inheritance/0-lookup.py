@@ -1,24 +1,20 @@
 #!/usr/bin/python3
 """
-This is the 'my_module' module.
-
-This module demonstrates a simple Python script adhering to
-the provided requirements.
+This module contains a function 'lookup' that returns the
+list of available
+attributes and methods of an object.
 """
 
 
-class MyClass:
+def lookup(obj):
     """
-    This is the 'MyClass' class.
+    Function to return the list of available attributes and methods of
+    an object.
 
-    This class demonstrates a simple Python class within
-    the 'my_module' module.
+    Args:
+        obj: The object to inspect.
+
+    Returns:
+        A list of the names of the available attributes and methods of 'obj'.
     """
-
-    def my_function(self):
-        """
-        This is the 'my_function' method.
-
-        This method demonstrates a simple function within the 'MyClass' class.
-        """
-        return "Hello, World!"
+    return dir(obj)
