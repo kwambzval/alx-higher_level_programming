@@ -1,5 +1,3 @@
 #!/bin/bash
-# This script displays response body for successful GET requests
-if [[ $(curl -s -o /dev/null -w "%{http_code}") == "200" ]]; then
-  curl -s "$1"
-fi
+# Fetches & displays response body for 200 status code (silent mode)
+curl -s -o /dev/null -w "%{http_code}\n"  "$@" | grep 200 && curl -s "$@"
